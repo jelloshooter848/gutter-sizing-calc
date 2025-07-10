@@ -2,6 +2,8 @@
 
 A web-based calculator for determining the minimum auxiliary gutter and wireway size per NEC (National Electrical Code) requirements.
 
+🔗 **[Live Demo](https://jelloshooter848.github.io/gutter-sizing-calc/)**
+
 ## Features
 
 - **NEC Compliant Calculations**: Based on NEC 366.22 (20% fill rule) and 312.6(A) for bending space requirements
