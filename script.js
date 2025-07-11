@@ -142,7 +142,7 @@ function calculateSize() {
     // Display results
     const resultsDiv = document.getElementById('results');
     resultsDiv.classList.remove('hidden');
-    document.getElementById('totalArea').textContent = `Total Conductor Area: ${totalArea.toFixed(2)} sq in`;
+    document.getElementById('totalArea').textContent = `Total Conductor Area: ${totalArea} sq in`;
     document.getElementById('minCrossSection').textContent = `Minimum Cross-Sectional Area (20% fill): ${minCrossSection.toFixed(2)} sq in`;
     document.getElementById('minBendingSpace').textContent = `Minimum Bending Space: ${maxBendingSpace} inches`;
 
