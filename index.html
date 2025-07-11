@@ -95,16 +95,30 @@
 
         <div class="flex justify-between mt-4">
             <button onclick="addConductor()" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" data-dashlane-label="true" data-dashlane-rid="8a7f4f47bf31cd87" data-dashlane-classification="other">Add Conductor</button>
-            <button onclick="calculateSize()" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600" data-dashlane-label="true" data-dashlane-rid="a21884d1e6e88adc" data-dashlane-classification="action">Calculate</button>
+            <div class="flex gap-4">
+                <button onclick="resetCalculator()" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Reset</button>
+                <button onclick="calculateSize()" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600" data-dashlane-label="true" data-dashlane-rid="a21884d1e6e88adc" data-dashlane-classification="action">Calculate</button>
+            </div>
         </div>
 
         <div id="results" class="mt-6 hidden">
-            <h2 class="text-xl font-semibold">Results</h2>
+            <div class="flex items-center mb-4">
+                <h2 class="text-xl font-semibold">Results:&nbsp;</h2>
+                <h2 id="recommendedSize" class="text-xl font-semibold text-green-600">4 x 4 inches</h2>
+            </div>
             <p id="totalArea" class="text-gray-700">Total Conductor Area: 2.88 sq in</p>
             <p id="minCrossSection" class="text-gray-700">Minimum Cross-Sectional Area (20% fill): 14.40 sq in</p>
             <p id="minBendingSpace" class="text-gray-700">Minimum Bending Space: 1.5 inches</p>
-            <p id="recommendedSize" class="text-gray-700 font-bold">Recommended Gutter/Wireway Size: 4 x 4 inches</p>
-            <p id="sizeWarning" class="text-red-500 hidden">Warning: Required size exceeds 24x24 inches. This will likely require a custom built enclosure that exceeds the minimum cross-sectional area seen above.</p>
+        </div>
+
+        <div id="sizeWarning" class="mt-4 p-4 bg-red-100 border border-red-400 rounded-lg hidden">
+            <div class="flex items-start">
+                <span class="text-red-600 font-bold text-lg mr-2">⚠️</span>
+                <div>
+                    <h3 class="text-red-800 font-semibold">Warning: Custom Size Required</h3>
+                    <p class="text-red-700 mt-1">Required size exceeds 24x24 inches. This will likely require a custom built enclosure that exceeds the minimum cross-sectional area shown above.</p>
+                </div>
+            </div>
         </div>
 
         <div class="text-sm text-gray-500 mt-4">

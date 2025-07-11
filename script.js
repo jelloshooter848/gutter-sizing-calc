@@ -149,10 +149,10 @@ function calculateSize() {
     // Update recommended size text and warning
     const warningDiv = document.getElementById('sizeWarning');
     if (minSize > 24) {
-        document.getElementById('recommendedSize').textContent = `Recommended Gutter/Wireway Size: >24" (Custom size required)`;
+        document.getElementById('recommendedSize').textContent = `>24" custom size required`;
         warningDiv.classList.remove('hidden');
     } else {
-        document.getElementById('recommendedSize').textContent = `Recommended Gutter/Wireway Size: ${recommendedSize} x ${recommendedSize} inches`;
+        document.getElementById('recommendedSize').textContent = `${recommendedSize}x${recommendedSize} minimum gutter size recommended`;
         warningDiv.classList.add('hidden');
     }
 }
@@ -164,4 +164,54 @@ function showConductorTable() {
 
 function closeConductorTable() {
     document.getElementById('conductorTableModal').classList.add('hidden');
+}
+
+// Reset calculator function
+function resetCalculator() {
+    // Reset to single conductor row with default values matching the original HTML structure
+    const conductorsDiv = document.getElementById('conductorInputs');
+    conductorsDiv.innerHTML = `
+        <div class="conductor-entry grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 border rounded">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Conductor Size (AWG/kcmil)</label>
+                <select class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <option value="16" selected>16 AWG</option>
+                    <option value="14">14 AWG</option>
+                    <option value="12">12 AWG</option>
+                    <option value="10">10 AWG</option>
+                    <option value="8">8 AWG</option>
+                    <option value="6">6 AWG</option>
+                    <option value="4">4 AWG</option>
+                    <option value="3">3 AWG</option>
+                    <option value="2">2 AWG</option>
+                    <option value="1">1 AWG</option>
+                    <option value="1/0">1/0 AWG</option>
+                    <option value="2/0">2/0 AWG</option>
+                    <option value="3/0">3/0 AWG</option>
+                    <option value="4/0">4/0 AWG</option>
+                    <option value="250">250 kcmil</option>
+                    <option value="300">300 kcmil</option>
+                    <option value="350">350 kcmil</option>
+                    <option value="400">400 kcmil</option>
+                    <option value="500">500 kcmil</option>
+                    <option value="600">600 kcmil</option>
+                    <option value="700">700 kcmil</option>
+                    <option value="750">750 kcmil</option>
+                    <option value="800">800 kcmil</option>
+                    <option value="900">900 kcmil</option>
+                    <option value="1000">1000 kcmil</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Quantity</label>
+                <input type="number" min="1" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            </div>
+            <div class="flex items-end">
+                <button onclick="removeConductor(this)" class="w-full bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Remove</button>
+            </div>
+        </div>
+    `;
+    
+    // Hide results section
+    document.getElementById('results').classList.add('hidden');
 }
