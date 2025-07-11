@@ -117,6 +117,19 @@
                 <li>Splices/taps must be accessible and cannot take up more than 75% of the cross-sectional volume of the gutter or wireway per NEC 366.56/376.56.</li>
             </ul>
         </div>
+        <div class="text-sm text-gray-500 mt-4 text-center">
+            <button onclick="showConductorTable()" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Click to View Maximum Number of Conductors in Gutter or Wireway Table</button>
+        </div>
+    </div>
+
+    <!-- Conductor Table Modal -->
+    <div id="conductorTableModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 max-w-4xl max-h-[90vh] overflow-auto">
+            <div class="flex justify-between items-center mb-4">
+                <button onclick="closeConductorTable()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <img src="image.png" alt="Conductor Table" class="w-full h-auto">
+        </div>
     </div>
 
     <script src="script.js"></script>

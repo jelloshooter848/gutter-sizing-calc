@@ -156,3 +156,12 @@ function calculateSize() {
         warningDiv.classList.add('hidden');
     }
 }
+
+// Modal functions for conductor table
+function showConductorTable() {
+    document.getElementById('conductorTableModal').classList.remove('hidden');
+}
+
+function closeConductorTable() {
+    document.getElementById('conductorTableModal').classList.add('hidden');
+}
